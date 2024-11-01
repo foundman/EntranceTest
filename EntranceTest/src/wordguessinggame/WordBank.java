@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+// создал отдельый класс для хранения слов из файла и методов доступа к ним, а также метода закачки слов
 public class WordBank {
 
     public static final String FILE_PATH = "wordguessinggame/res/words.txt";
@@ -15,7 +16,7 @@ public class WordBank {
 
     static {
         try {
-            loadWordsFromFile(FILE_PATH);
+            loadWordsFromFile();
         } catch (IOException e) {
             System.err.println("Ошибка при загрузке слов: " + e.getMessage());
         }
@@ -25,15 +26,14 @@ public class WordBank {
         return new ArrayList<>(words);
     }
 
-    private static void loadWordsFromFile(String filePath) throws IOException {
-        try (InputStream inputStream = WordBank.class.getClassLoader().getResourceAsStream(filePath);
-             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
-            if (inputStream == null) {
-                throw new IOException("Файл не найден: " + filePath);
-            }
-            String line;
-            while ((line = reader.readLine()) != null) {
-                words.add(line.trim());
+    private static void loadWordsFromFile() throws IOException {
+        try (InputStream inputStream = WordBank.class.getClassLoader().getResourceAsStream(WordBank.FILE_PATH)) {
+            assert inputStream != null;
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    words.add(line.trim());
+                }
             }
         }
     }

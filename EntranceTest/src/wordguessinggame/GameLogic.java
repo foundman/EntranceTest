@@ -15,9 +15,8 @@ public class GameLogic {
         this.input = input;
     }
     public void start(int livesGiven){
-        WordBank wordBank;
         WordLogic wordLogic = new WordLogic(WordBank.getWords());
-        GameState gameState = GameState.GAME_IN_PROCESS;
+        GameState gameState;
         int livesRemaining = livesGiven;
         do{
             GameOutput.printUI( livesGiven,

@@ -13,9 +13,6 @@ public class WordLogic {
         return guessedWord;
     }
 
-    public List<Character> getGuessedLetters() {
-        return guessedLetters;
-    }
 
     public List<Character> getWrongLetters() {
         return wrongLetters;

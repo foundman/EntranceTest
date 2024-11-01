@@ -2,6 +2,7 @@ package wordguessinggame;
 
 import java.util.Scanner;
 
+// класс реализации интерфейса ввода
 public class GameInputImpl implements GameInput{
 
     private final Scanner scanner = new Scanner(System.in);

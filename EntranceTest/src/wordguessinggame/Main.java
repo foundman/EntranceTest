@@ -45,7 +45,7 @@ public class Main {
         System.out.println(GREETING);
 
         GameLogic gameLogic = new GameLogic(new GameInputImpl());
-        boolean playerLeft = false;
+        boolean playerLeft;
         do {
             System.out.println(CHOOSING_DIFFICULTY);
             int livesGiven = getChosenDifficulty();
@@ -76,7 +76,7 @@ public class Main {
         }
     }
 
-
+    // принимаем ответ игрока с его желанием играть дальше
     public static boolean getPlayerAnswer() {
         Scanner scanner = new Scanner(System.in);
         while (true) {

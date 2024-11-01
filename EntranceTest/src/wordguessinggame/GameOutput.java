@@ -2,7 +2,7 @@ package wordguessinggame;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
+
 
 public class GameOutput {
     public static final char UNREVEALED_LETTER = '_';
@@ -89,7 +89,7 @@ public class GameOutput {
         ———"""
     };
 
-
+    // обработка ошибок ввода
     static void reportInputError(InputErrorCode error){
         switch (error){
             case EMPTY_OR_LONG_INPUT -> System.out.println("Вы ввели больше одного символа, либо не ввели ничего.");
@@ -99,6 +99,7 @@ public class GameOutput {
     static void reportEnteredAlreadyOpenedLetter(){
         System.out.println("Вы ввели уже открытую букву!");
     }
+    // метод возвращает строку, в которой буквы через пробел. Используется в отображении неправильных букв
     static String convertToString(List<Character> letters) {
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < letters.size(); i++) {

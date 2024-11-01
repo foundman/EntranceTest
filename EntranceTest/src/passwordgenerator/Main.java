@@ -58,7 +58,7 @@ public class Main {
         fisherYatesShuffling(password);
         return password.toString();
     }
-
+    // алгоритм тасовки Фишера-Йетса для увеличения безопасности пароля
     private static void fisherYatesShuffling(StringBuilder password) {
         SecureRandom securityRandom = new SecureRandom();
         for (int i = password.length() - 1; i > 0; i--) {
@@ -68,7 +68,7 @@ public class Main {
             password.setCharAt(j, temp);
         }
     }
-
+    // получаем рандомный символ для использования в пароле
     private static char getRandomCharFromString(String str, SecureRandom random) {
         int randomIndex = random.nextInt(str.length());
         return str.charAt(randomIndex);
