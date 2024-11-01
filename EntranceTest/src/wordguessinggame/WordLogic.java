@@ -41,15 +41,6 @@ public class WordLogic {
 
         return words.get(randomWordIndex);
     }
-    /*public void updateShownWord(char enteredLetter){
-        if (guessedLetters.contains(enteredLetter) || wrongLetters.contains(enteredLetter)){
-            return;
-        }
-
-        for (int i = 0; i < wordToShow.length; i++){
-
-        }
-    }*/
 
     public boolean checkIfLetterAlreadyOpened(char enteredLetter){
         return guessedLetters.contains(enteredLetter) || wrongLetters.contains(enteredLetter);

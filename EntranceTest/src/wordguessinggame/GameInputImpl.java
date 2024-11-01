@@ -11,7 +11,7 @@ public class GameInputImpl implements GameInput{
         if (input.length() != 1) {
             throw new InputException(InputErrorCode.EMPTY_OR_LONG_INPUT);
         }
-        if (!input.matches("[а-яА-Я]") && input.charAt(0) != 'ё') {
+        if (!input.matches("[а-яА-ЯёЁ]")) {
             throw new InputException(InputErrorCode.INVALID_CHARACTER);
         }
         System.out.println();
