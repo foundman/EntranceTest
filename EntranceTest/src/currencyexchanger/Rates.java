@@ -25,9 +25,12 @@ public class Rates {
         if (rates.length != Currency.values().length) {
             throw new IllegalArgumentException("Неверное количество курсов в массиве");
         }
-
-        for (int i = 0; i < Currency.values().length; i++) {
-            exchangeRates.put(Currency.values()[i], rates[i]);
+        for (int i = 1; i < Currency.values().length; i++) {
+            try {
+                exchangeRates.put(Currency.values()[i], rates[i]);
+            } catch (NumberFormatException e) {
+                System.err.println("Ошибка преобразования курса для " + Currency.values()[i].getCurrencyName() + ". Курс не обновлен.");
+            }
         }
     }
     public static BigDecimal getRate(Currency initialCurrency, Currency finalCurrency) {
