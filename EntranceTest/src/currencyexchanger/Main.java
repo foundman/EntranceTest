@@ -23,11 +23,11 @@ public class Main {
         } else {
             System.out.println("Используются стандартные курсы валют.");
         }
-        boolean userLeft = false;
+        boolean userLeft;
         do{
             Currency initialCurrency = IO.enterInitialCurrency();
             Currency finalCurrency = IO.enterFinalCurrency();
-            boolean userEntersNewCurrencies = false;
+            boolean userEntersNewCurrencies;
             do {
                 BigDecimal amount = IO.enterAmount();
                 BigDecimal convertedAmount = convert(amount, Rates.getRate(initialCurrency, finalCurrency));

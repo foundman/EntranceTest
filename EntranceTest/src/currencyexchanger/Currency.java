@@ -16,7 +16,4 @@ public enum Currency {
     public String getCurrencyName(){
         return currencyName;
     }
-    public static int getNumOfCurrencies(){
-        return Currency.values().length;
-    }
 }
